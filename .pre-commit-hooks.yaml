@@ -1,0 +1,6 @@
+-   id: add-branch-name
+    name: add branch name
+    description: adds brach name to commit message
+    entry: add-branch-name
+    language: python
+    stages: [commit]

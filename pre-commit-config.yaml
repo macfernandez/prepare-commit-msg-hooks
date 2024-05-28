@@ -1,0 +1,5 @@
+repos:
+-   repo: https://https://github.com/macfernandez/prepare-commit-msg-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: add-branch-name
