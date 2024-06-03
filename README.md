@@ -2,6 +2,7 @@ Prepare Commit Message Hooks
 ============================
 
 Some hooks for prepare your commit message using `pre-commit`.
+
 See also: https://github.com/pre-commit/pre-commit
 
 ### Using prepare-commit-msg-hooks with pre-commit
