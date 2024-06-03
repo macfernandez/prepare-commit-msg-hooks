@@ -28,7 +28,7 @@ def add_prefix(text: str, prefix: str) -> str:
 
 def add_suffix(text: str, suffix: str) -> str:
     if not re.search(rf"\b{suffix}$", text):
-        return f"{text} {suffix}"
+        return f"{text.strip()} {suffix}\n"
     else:
         return text
 
