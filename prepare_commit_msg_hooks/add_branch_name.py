@@ -20,11 +20,17 @@ def check_if_branch_match_pattern(branch: str, pattern: str) -> bool:
     
 
 def add_prefix(text: str, prefix: str) -> str:
-    return f"{prefix} {text}"
+    if not re.search(rf"^{prefix}\b", text):
+        return f"{prefix} {text}"
+    else:
+        return text
 
 
 def add_suffix(text: str, suffix: str) -> str:
-    return f"{text} {suffix}"
+    if not re.search(rf"\b{suffix}$", text):
+        return f"{text} {suffix}"
+    else:
+        return text
 
 
 def add_branch_name(
@@ -39,7 +45,7 @@ def add_branch_name(
             branch_name, pattern
         )
         if not branch_match_pattern:
-            print("Branch doesn't match. Addition skipped.")
+            print("Branch doesn't match pattern. Addition skipped.")
             return 0
     
     with open(filename, 'r') as f:
@@ -69,15 +75,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         help='Pattern to check against branch name before adding it to the commit message'
     )
     group = parser.add_mutually_exclusive_group(required=False)
-    group.add_argument("--prefix", action="store_true", dest='loc')
-    group.add_argument("--suffix", action="store_true", dest='loc')
+    group.add_argument("--prefix", action='store_const', dest='loc', const="prefix")
+    group.add_argument("--suffix", action='store_const', dest='loc', const="suffix")
     
     args = parser.parse_args(argv)
 
     return_value = add_branch_name(args.filename, args.pattern, args.loc)
 
     return return_value
-
 
 if __name__ == '__main__':
     raise SystemExit(main())
