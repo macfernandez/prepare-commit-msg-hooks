@@ -4,15 +4,25 @@ import re
 import argparse
 from typing import Sequence, Literal
 
-from git import Repo
+import git
 
 
 def get_branch_name() -> str:
-    return Repo().head.ref.name
+    """
+    Get current branch name.
+
+    Returns
+    -------
+    str
+        Current branch name.
+    """
+    return git.Repo().head.ref.name
 
 
 def check_if_branch_match_pattern(branch: str, pattern: str) -> bool:
-    pattern = re.compile(pattern)
+    """
+    """
+    pattern = re.compile(rf"^{pattern}$")
     if pattern.search(branch):
         return True
     else:
@@ -21,16 +31,15 @@ def check_if_branch_match_pattern(branch: str, pattern: str) -> bool:
 
 def add_prefix(text: str, prefix: str) -> str:
     if not re.search(rf"^{prefix}\b", text):
-        return f"{prefix} {text}"
-    else:
-        return text
+        text = f"{prefix} {text}"
+    return text
 
 
 def add_suffix(text: str, suffix: str) -> str:
+    text = text.strip()
     if not re.search(rf"\b{suffix}$", text):
-        return f"{text.strip()} {suffix}\n"
-    else:
-        return text
+        text = f"{text} {suffix}"
+    return f"{text}\n"
 
 
 def add_branch_name(
