@@ -23,8 +23,8 @@ Create a `.prepate-commit-msg-config.yaml` and add:
 Add the branch name to you commit message.
 
 - `--pattern` - Check if branch match the passed pattern before adding it. If it doesn't match, it's not added either.
-- `--prefix` - Wether to add the branch name as prefix (default).
-- `--suffix` - Wether to add the branch name as suffix. Mutually exclusive with `--prefix`.
+- `--prefix` - Whether to add the branch name as prefix (default).
+- `--suffix` - Whether to add the branch name as suffix. Mutually exclusive with `--prefix`.
 
 **Usage example**
 
