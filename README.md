@@ -7,7 +7,7 @@ See also: https://github.com/pre-commit/pre-commit
 
 ### Using prepare-commit-msg-hooks with pre-commit
 
-Create a `.prepate-commit-msg-config.yaml` and add:
+Create a `.prepare-commit-msg-config.yaml` and add:
 
 ```
 -   repo: https://github.com/macfernandez/prepare-commit-msg-hooks
