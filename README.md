@@ -20,11 +20,11 @@ Create a `.prepare-commit-msg-config.yaml` and add:
 
 #### `add-branch-name`
 
-Add the branch name to you commit message.
+Add the branch name to your commit message.
 
-- `--pattern` - Check if branch match the passed pattern before adding it. If it doesn't match, it's not added either.
-- `--prefix` - Whether to add the branch name as prefix (default).
-- `--suffix` - Whether to add the branch name as suffix. Mutually exclusive with `--prefix`.
+- `--pattern`: Check if branch match the passed pattern before adding it. If it doesn't match, it's not added either.
+- `--prefix`: Whether to add the branch name as prefix (default).
+- `--suffix`: Whether to add the branch name as suffix. Mutually exclusive with `--prefix`.
 
 **Usage example**
 
