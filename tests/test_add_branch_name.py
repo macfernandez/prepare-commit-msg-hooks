@@ -2,7 +2,7 @@ from unittest.mock import Mock, patch, mock_open
 
 import pytest
 
-import prepare_commit_msg_hooks.add_branch_name as bn
+import pre_commit_hooks.add_branch_name as bn
 
 
 @pytest.fixture

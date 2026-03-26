@@ -1,6 +1,6 @@
 [run]
 source =
-    prepare_commit_msg_hooks/
+    pre_commit_hooks/
 
 [report]
 omit = 

@@ -1,16 +1,16 @@
-Prepare Commit Message Hooks
+Pre Commit Hooks
 ============================
 
 Some hooks for preparing your commit message using `pre-commit`.
 
 See also: https://github.com/pre-commit/pre-commit
 
-### Using prepare-commit-msg-hooks with pre-commit
+### Using pre-commit-hooks with pre-commit
 
-Create a `.prepare-commit-msg-config.yaml` and add:
+Create a `.pre-commit-config.yaml` and add:
 
 ```
--   repo: https://github.com/macfernandez/prepare-commit-msg-hooks
+-   repo: https://github.com/macfernandez/pre-commit-hooks
     rev: v1.0.0  # Use the ref you want to point at
     hooks:
     -   id: add-branch-name
@@ -29,7 +29,7 @@ Add the branch name to your commit message.
 **Usage example**
 
 ```
--   repo: https://github.com/macfernandez/prepare-commit-msg-hooks
+-   repo: https://github.com/macfernandez/pre-commit-hooks
     rev: v1.0.0  # Use the ref you want to point at
     hooks:
     -   id: add-branch-name
